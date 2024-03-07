@@ -10,5 +10,8 @@
   },
   "devDependencies": {
     "vite": "^5.1.4"
+  },
+  "dependencies": {
+    "crypto-js": "^4.2.0"
   }
 }
