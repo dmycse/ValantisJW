@@ -1,5 +1,5 @@
 import { SPINNER } from '../../constants/htmlNodeElements';
-import SpinnerImg from '../../../public/icons/spinner.svg';
+import SpinnerImg from '/icons/spinner.svg';
 import './Spinner.css';
 
 
