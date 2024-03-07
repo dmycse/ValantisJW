@@ -1,0 +1,36 @@
+.pages {
+  display: flex;
+  justify-content: center;
+}
+
+.page__arrows {
+  width: 600px;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.page__arrow {
+  font-size: 20px;
+
+  border: none;
+  outline: none;
+  background: none;
+  color: var(--color-style);
+
+  cursor: pointer;
+}
+
+.page__arrow:hover {
+  font-weight: bold;
+}
+
+.page__arrow:active {
+  transform: scale(1.1);
+}
+
+.page__arrow:disabled,
+.page__arrow[disabled] { 
+  display: none;
+}
