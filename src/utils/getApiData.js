@@ -1,4 +1,4 @@
-import { API_URL } from "../constants/api";
+import { API_URL2 } from "../constants/api";
 import { authString } from "./authString";
 import { removeItemDublicates } from "./dublicatesUtil";
 import errorPage from "../components/ErrorPage/ErrorPage";
@@ -11,7 +11,7 @@ class GetApiData {
   async getData(params, connectionCount = this.connectionAttemps) {
     let requestItems = params.action === 'get_items';
     try {
-      let response = await fetch(API_URL, {
+      let response = await fetch(API_URL2, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8',
