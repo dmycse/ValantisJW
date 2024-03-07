@@ -63,7 +63,6 @@ class Filter {
   static initInputEven() {
     this.form && this.inputElems
       .forEach(item => item.addEventListener('input', (e) => {
-        console.log(item.value)
         if (item.value.length > 3) {
           item.classList.remove('incorrect');
           this.formBtns.forEach(btn => btn.removeAttribute('disabled'));
