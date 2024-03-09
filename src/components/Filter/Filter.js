@@ -1,5 +1,4 @@
 import { CATALOG, PAGES, FILTER }  from '../../constants/htmlNodeElements';
-import BRANDS from '../../constants/brands';
 import spinnerPage from '../Spinner/Spinner';
 import catalogPage from '../Catalog/Catalog';
 import noDataPage from '../NoDataPage/NoDataPage';
@@ -46,7 +45,7 @@ class Filter {
         <div class="form__elem">
           <select name="brand" class="form__select">
             <option value="noselect" selected>Бренд</option>
-            ${BRANDS.map(item => `<option value"${item}">${item}</option>`)}
+            ${catalogPage.brands.map(item => `<option value"${item}">${item}</option>`)}
           </select>
         </div>
         <button type="submit" class="form__btn" name="submitFormBtn" disabled>Показать</button>
