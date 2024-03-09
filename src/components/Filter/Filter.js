@@ -92,7 +92,7 @@ class Filter {
     this.form && this.form.addEventListener('submit', (e) => {
       e.preventDefault();
      
-      let [productValue, priceValue, brandValue] = [this.form.product.value, this.form.price.value, this.form.brand.value];
+      let [productValue, priceValue, brandValue] = [this.form.product.value.trim(), this.form.price.value.trim(), this.form.brand.value];
       
       let isFieldValid = true;
       if (productValue && !(/[а-яёА-ЯЁ]{5,}/g).test(productValue)) {
