@@ -2,6 +2,7 @@ import getApiData from "./getApiData";
 
 class Cache {
   products = new Map();
+  _brands = [];
 
   async preloadItem(pageNum, productsPerPage, endPageNum) {
     if  (endPageNum && endPageNum === pageNum) return;
@@ -42,6 +43,15 @@ class Cache {
   getCacheSize() {
     return this.products.size;
   }
+
+  get brands() {
+    return this._brands;
+  }
+
+  set brands(brandList) {
+    this._brands = brandList;
+  }
+
 }
 
 export default new Cache();

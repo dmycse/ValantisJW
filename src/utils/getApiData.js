@@ -61,12 +61,12 @@ class GetApiData {
        : await this.getData(params)
   
     if (ids) {
-      let getItemsParams = {
+      let itemsParams = {
         action: "get_items", 
         params: {ids}
       };
 
-      let productsList = await this.getData(getItemsParams);
+      let productsList = await this.getData(itemsParams);
       return productsList;
       
     } else {
@@ -76,6 +76,24 @@ class GetApiData {
 
   timeoutDelay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  async getBrands() {
+    let brandsParams = {
+      action: "get_fields", 
+      params: {
+        field: "brand"
+      }
+    };
+
+    let fetchBrands = await this.getData(brandsParams);
+    let result = fetchBrands 
+      ? fetchBrands.filter(elem => elem).sort()
+      : []
+
+    
+
+    return result;
   }
 
 }

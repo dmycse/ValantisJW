@@ -10,6 +10,7 @@ import './Catalog.css';
 
 class Catalog {
   products = [];
+  brands = [];
   currentPage = 0;
   productsPerPage = 50;
   
@@ -57,12 +58,19 @@ class Catalog {
     let data = cacheData.getItem(this.currentPage) 
       ? cacheData.getItem(this.currentPage)
       : await getApiData.getProducts(params);
-    
+
+    let brandList = cacheData.brands.length > 0
+      ? cacheData.brands
+      : await getApiData.getBrands();
+
     if (data) {
       spinnerPage.removeSpinner();
       
       this.products = data;
       cacheData.setItem(this.currentPage, this.products);
+
+      this.brands = brandList;
+      cacheData.brands = this.brands;
      
       (endPageNum === END_PAGE - 1) && cacheData.preloadItem(this.currentPage, this.productsPerPage, endPageNum);
       
