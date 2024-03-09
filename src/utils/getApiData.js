@@ -6,13 +6,14 @@ import errorPage from "../components/ErrorPage/ErrorPage";
 
 class GetApiData {
   connectionAttemps = 5;
-  connectionDelay = 3000;
+  connectionDelay = 3e3;
   
   async getData(params, connectionCount = this.connectionAttemps) {
     let requestItems = params.action === 'get_items';
     try {
       let response = await fetch(API_URL2, {
         method: 'POST',
+        mode: 'cors',
         headers: {
           'Content-Type': 'application/json;charset=utf-8',
           'X-Auth': authString
